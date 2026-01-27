@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1d1f22"/>
+      <stop offset="60%" stop-color="#111213"/>
+      <stop offset="100%" stop-color="#0b0c0d"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#bg)"/>
+  <!-- Chalk strokes -->
+  <path d="M12 28 C22 20, 42 20, 52 28" stroke="#f5f7fa" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <path d="M14 36 C24 44, 40 44, 50 36" stroke="#f5f7fa" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <circle cx="48" cy="46" r="3" fill="#f5f7fa" opacity="0.9"/>
+</svg>
