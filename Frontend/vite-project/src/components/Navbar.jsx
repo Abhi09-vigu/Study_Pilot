@@ -35,13 +35,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="px-3 py-4 flex items-center">
-      <div className="flex-1" />
+    <nav className="px-3 py-4 flex items-center justify-between">
       <div className="mb-4 flex items-center gap-2">
         <img src="/favicon.svg" alt="Study-Pilot" className="h-6 w-6" />
         <span className="heading text-xl">Study-Pilot</span>
       </div>
-      <div className="flex-1 flex justify-end relative" ref={ref}>
+      <div className="relative" ref={ref}>
         <button className="w-9 h-9 rounded-full bg-charcoal-800 border border-white/10 overflow-hidden" onClick={() => setOpen((v) => !v)} aria-label="Profile">
           {avatar ? <img src={avatar} alt="avatar" className="w-full h-full object-cover" /> : null}
         </button>

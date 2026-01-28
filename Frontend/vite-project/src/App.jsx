@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import './index.css';
+import { SparklesCore } from '@/components/ui/sparkles';
 import { api, requireAuth, logout } from './lib/api';
 import { marked } from 'marked';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -10,13 +11,25 @@ import Navbar from './components/Navbar';
 
 function Landing() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-24 text-center">
-      <header className="mb-8 chalk-scribble">
-        <h1 className="heading text-5xl">Study-Pilot</h1>
-        <p className="subheading mt-3">AI-based study planner & reminders — simple, adaptive, practical.</p>
-      </header>
-      <div className="mt-10">
-        <Link className="px-6 py-3 rounded border border-white/30 hover:border-white/50" to="/login">Explore Us</Link>
+    <div className="relative py-24 text-center min-h-screen flex flex-col justify-center overflow-hidden">
+      {/* Sparkles background layer */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <SparklesCore
+          background="transparent"
+          minSize={0.4}
+          maxSize={1.2}
+          particleDensity={600}
+          particleColor="#FFFFFF"
+        />
+      </div>
+      <div className="max-w-3xl mx-auto px-6 text-center">
+        <header className="mb-8 chalk-scribble">
+          <h1 className="heading text-5xl animated-title">Study-Pilot</h1>
+          <p className="subheading mt-3 animated-title">AI-based study planner & reminders — simple, adaptive, practical.</p>
+        </header>
+        <div className="mt-10">
+          <Link className="px-6 py-3 rounded border border-white/30 hover:border-white/50 animated-title" to="/login">Explore Us</Link>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../lib/api';
+import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function Register() {
   }
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
-      <div className="chalk-card p-6 w-full max-w-md md:max-w-lg">
+      <BackgroundGradient className="chalk-card p-6 w-full max-w-md md:max-w-lg">
         <h2 className="heading text-2xl">Sign Up</h2>
         <div className="chalk-divider my-4" />
         <form onSubmit={onSubmit} className="grid gap-4">
@@ -29,7 +30,7 @@ export default function Register() {
           <button className="w-full px-4 py-2 rounded border border-white/20 hover:border-white/40">Create Account</button>
         </form>
         <p className="mt-3 text-chalk/70">Already have an account? <Link to="/login" className="underline">Login</Link></p>
-      </div>
+      </BackgroundGradient>
     </div>
   );
 }
