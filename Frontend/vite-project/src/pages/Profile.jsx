@@ -4,7 +4,7 @@
 // - Shows Name, Email, and Account creation date
 // - Allows updating name/email and uploading an avatar image
 import { useEffect, useState } from 'react';
-import { api } from '../lib/api';
+import { api, apiAssetUrl } from '../lib/api';
 import Navbar from '../components/Navbar';
 
 export default function Profile() {
@@ -57,9 +57,7 @@ export default function Profile() {
     }
   }
 
-  const avatarSrc = user?.avatarUrl
-    ? (user.avatarUrl.startsWith('/uploads') ? `/api${user.avatarUrl}` : user.avatarUrl)
-    : '';
+  const avatarSrc = apiAssetUrl(user?.avatarUrl);
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-6">

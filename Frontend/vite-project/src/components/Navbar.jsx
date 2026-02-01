@@ -5,7 +5,7 @@
 // - Dropdown closes when clicking outside
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { logout, requireAuth, api } from '../lib/api';
+import { logout, requireAuth, api, apiAssetUrl } from '../lib/api';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -28,8 +28,7 @@ export default function Navbar() {
       if (!requireAuth()) return;
       try {
         const me = await api('/auth/me');
-        const src = me?.avatarUrl ? (me.avatarUrl.startsWith('/uploads') ? `/api${me.avatarUrl}` : me.avatarUrl) : '';
-        setAvatar(src);
+        setAvatar(apiAssetUrl(me?.avatarUrl));
       } catch {}
     })();
   }, []);
