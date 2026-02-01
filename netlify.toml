@@ -1,0 +1,10 @@
+[build]
+  base = "Frontend/vite-project"
+  command = "npm run build"
+  publish = "dist"
+
+# Single Page App routing (React Router, etc.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
