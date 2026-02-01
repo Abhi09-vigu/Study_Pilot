@@ -3,6 +3,13 @@
   command = "npm run build"
   publish = "dist"
 
+# Proxy API calls to the backend (must come before the SPA redirect)
+[[redirects]]
+  from = "/api/*"
+  to = "https://study-pilot-1.onrender.com/api/:splat"
+  status = 200
+  force = true
+
 # Single Page App routing (React Router, etc.)
 [[redirects]]
   from = "/*"
